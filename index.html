@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="src/style.css" />    
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <title>Weather app</title>
   </head>
 
@@ -30,22 +30,22 @@
   <div class="row">
     <div class="col">
         <div>
-            <form class="d-flex" role="search">
+            <form class="d-flex search-field" id="search-field" role="search">
               <input class="form-control me-2 choose-city" id="city-input" type="search" placeholder="Choose your city..." aria-label="Search">
               <button class="btn btn-outline-light search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <a href="#" class="current-location" id="current-location-button">or use current location</a>
             
             <br />
-            <h1>
+            <h1 id="city">
             <!-- <img src="icons/iconsun.png" alt="sunny" width="30px" class="top-weather-icon"> -->
-            Dublin</h1>
-    <h2>Monday, Aug 2</h2>
-    <h3>23°<a href="#" class="celsius" id="c-temp">C</a>|<a href="#" class="fahrenheit" id="f-temp">F</a></h3>
-    <h4>sunny</h4>
+             </h1>
+    <h2><span id="day"> </span></h2>
+    <h3 id="temperature"> <a href="#" class="celsius" id="c-temp">C</a>|<a href="#" class="fahrenheit" id="f-temp">F</a></h3>
+    <h4 id="description"> </h4>
      <p>
-      W: 8km/h <br />
-      H: 5%
+      W: <span id="wind"> </span>km/h <br />
+      H: <span id="humidity"> </span>%
     </p>
     </div>
     <div class="col">
