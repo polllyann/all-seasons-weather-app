@@ -75,6 +75,10 @@ a:hover {
   margin-left: 140px;
 }
 
+.current-location:hover {
+  color: #f59694;
+}
+
 .search-button {
   margin: 40px 0 0 -50px;
   border: none;
