@@ -30,6 +30,7 @@ let dayNumber = currentTime.getDate();
 document.querySelector("#day").innerHTML = `${day}, ${month} ${dayNumber}`;
 
 function showCity(response) {
+  celsiusTemp = Math.round(response.data.main.temp);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -38,30 +39,39 @@ function showCity(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  let descr = document.querySelector("#description");
-  descr.innerHTML = response.data.weather[0].main;
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
 
-  if (descr.innerHTML == "Clouds") {
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  let descrForImage = response.data.weather[0].main;
+
+  if (descrForImage == "Clouds") {
     document.querySelector("#main-image").innerHTML =
       '<img src="images/clouds.png" alt="Clouds" width="300"/>';
   }
-  if (descr.innerHTML == "Thunderstorm") {
+  if (descrForImage == "Thunderstorm") {
     document.querySelector("#main-image").innerHTML =
       '<img src="images/rain.png" alt="Thunderstorm" width="300"/>';
   }
-  if (descr.innerHTML == "Drizzle") {
+  if (descrForImage == "Drizzle") {
     document.querySelector("#main-image").innerHTML =
       '<img src="images/rain.png" alt="Drizzle" width="300"/>';
   }
-  if (descr.innerHTML == "Rain") {
+  if (descrForImage == "Rain") {
     document.querySelector("#main-image").innerHTML =
       '<img src="images/rain.png" alt="Rain" width="300"/>';
   }
-  if (descr.innerHTML == "Snow") {
+  if (descrForImage == "Snow") {
     document.querySelector("#main-image").innerHTML =
       '<img src="images/snow.png" alt="Snow" width="300"/>';
   }
-  if (descr.innerHTML == "Clear") {
+  if (descrForImage == "Clear") {
     document.querySelector("#main-image").innerHTML =
       '<img src="images/sun1.png" alt="Clear" width="300"/>';
   }
@@ -96,4 +106,27 @@ function clickUseCurrent(event) {
 let useCurrent = document.querySelector("#current-location-button");
 useCurrent.addEventListener("click", clickUseCurrent);
 
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = Math.round((celsiusTemp * 9) / 5 + 32);
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = fahrenheitTemperature;
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let tempHeader = document.querySelector("#temperature");
+  tempHeader.innerHTML = celsiusTemp;
+}
+let celsiusTemp = null;
+
+let fahrenheit = document.querySelector("#f-temp");
+fahrenheit.addEventListener("click", showFahrenheitTemp);
+
+let celsius = document.querySelector("#c-temp");
+celsius.addEventListener("click", showCelsiusTemp);
 citySubmit("Kyiv");
