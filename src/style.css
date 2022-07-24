@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  font-size: 15px;
+  font-size: 14px;
   margin: 0 auto;
   color: #48484a;
 }
@@ -26,13 +26,13 @@ h3 {
 h4 {
   color: #48484a;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   margin: 0 auto;
   text-transform: capitalize;
 }
 
 p {
-  font-size: 15px;
+  font-size: 12px;
   margin: 10px;
   color: #48484a;
 }
@@ -41,7 +41,7 @@ a {
   padding: 0 auto;
   transition: all 150ms ease-in-out;
   text-decoration: none;
-  color: #48484a;
+  color: #000000;
 }
 
 a:hover {
@@ -65,7 +65,7 @@ a:hover {
 }
 .fahrenheit.active:hover,
 .celsius.active:hover {
-  color: #48484a;
+  color: #000000;
   text-decoration: none;
 }
 .fahrenheit:hover,
@@ -102,7 +102,7 @@ a:hover {
 .choose-city {
   font-family: "Roboto Slab", serif;
   border: 1px solid #b9b9c2;
-  font-size: 10px;
+  font-size: 12px;
   border-radius: 0;
   margin: 40px 0 0 0;
   transition: all 150ms ease-in-out;
@@ -127,7 +127,7 @@ a:hover {
 
 .last-phrase {
   font-family: "Roboto Slab", serif;
-  color: #48484a;
+  color: #000000;
   font-size: 10px;
   display: block;
   margin: 30px auto;
@@ -147,13 +147,13 @@ a:hover {
 }
 
 .weather-forecast-date {
-  font-size: 16px;
-  color: #48484a;
-  opacity: 0.5;
+  font-size: 15px;
+  color: #000000;
+  opacity: 0.6;
 }
 
 .weather-forecast-temperature-min {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .weather-forecast-temperature {
