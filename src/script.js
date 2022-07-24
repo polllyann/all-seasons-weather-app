@@ -57,15 +57,15 @@ function showCity(response) {
   }
   if (descrForImage == "Thunderstorm") {
     document.querySelector("#main-image").innerHTML =
-      '<img src="images/rain.png" alt="Thunderstorm" width="300"/>';
+      '<img src="images/rain1.png" alt="Thunderstorm" width="300"/>';
   }
   if (descrForImage == "Drizzle") {
     document.querySelector("#main-image").innerHTML =
-      '<img src="images/rain.png" alt="Drizzle" width="300"/>';
+      '<img src="images/rain2.png" alt="Drizzle" width="300"/>';
   }
   if (descrForImage == "Rain") {
     document.querySelector("#main-image").innerHTML =
-      '<img src="images/rain.png" alt="Rain" width="300"/>';
+      '<img src="images/rain2.png" alt="Rain" width="300"/>';
   }
   if (descrForImage == "Snow") {
     document.querySelector("#main-image").innerHTML =
@@ -73,7 +73,7 @@ function showCity(response) {
   }
   if (descrForImage == "Clear") {
     document.querySelector("#main-image").innerHTML =
-      '<img src="images/sun1.png" alt="Clear" width="300"/>';
+      '<img src="images/sun.png" alt="Clear" width="300"/>';
   }
 }
 
