@@ -8,7 +8,7 @@ a {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 25px;
   margin: 15px 0 0 0;
 }
 
@@ -19,21 +19,21 @@ h2 {
 }
 
 h3 {
-  font-size: 50px;
+  font-size: 45px;
   margin: 0 auto;
 }
 
 h4 {
   color: #48484a;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 12px;
   margin: 0 auto;
   text-transform: capitalize;
 }
 
 p {
   font-size: 12px;
-  margin: 10px;
+  margin: 2px 0 0 0;
   color: #48484a;
 }
 
@@ -53,6 +53,10 @@ a:hover {
   max-width: 600px;
   display: block;
   margin: 0 auto;
+}
+
+.right-side {
+  margin-top: 33px;
 }
 
 .fahrenheit.active {
@@ -117,12 +121,12 @@ a:hover {
 }
 
 .weather-image-big {
-  margin: 30px 0 0 0;
+  margin: -15px 0 0 0;
 }
 
 .top-weather-icon {
   margin: 0 auto;
-  height: 70px;
+  height: 40px;
 }
 
 .last-phrase {
@@ -141,15 +145,15 @@ a:hover {
 }
 
 .weather-forecast {
-  margin-top: 20px;
   text-align: center;
   color: #48484a;
+  margin: -20px 0 0 0;
+  font-family: "Roboto Slab", serif;
 }
 
 .weather-forecast-date {
-  font-size: 15px;
+  font-size: 14px;
   color: #000000;
-  opacity: 0.6;
 }
 
 .weather-forecast-temperature-min {
