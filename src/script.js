@@ -1,34 +1,3 @@
-let currentTime = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[currentTime.getDay()];
-
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-
-let month = months[currentTime.getMonth()];
-let dayNumber = currentTime.getDate();
-document.querySelector("#day").innerHTML = `${day}, ${month} ${dayNumber}`;
-
 function showCity(response) {
   celsiusTemp = Math.round(response.data.main.temp);
   document.querySelector("#city").innerHTML = response.data.name;
@@ -88,8 +57,6 @@ function citySearch(event) {
   let city = document.querySelector("#city-input").value;
   citySubmit(city);
 }
-let searchCity = document.querySelector("#search-field");
-searchCity.addEventListener("submit", citySearch);
 
 function getCurrentLoc(position) {
   let longitude = position.coords.longitude;
@@ -103,8 +70,6 @@ function clickUseCurrent(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getCurrentLoc);
 }
-let useCurrent = document.querySelector("#current-location-button");
-useCurrent.addEventListener("click", clickUseCurrent);
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
@@ -122,6 +87,68 @@ function showCelsiusTemp(event) {
   let tempHeader = document.querySelector("#temperature");
   tempHeader.innerHTML = celsiusTemp;
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+                <div class="weather-forecast-date">
+                ${day} 
+                </div>
+                <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="" width="56"/>
+               <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-max">18°</span>
+                <span class="weather-forecast-temperature-min">12°</span>
+                </div>
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+let currentTime = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[currentTime.getDay()];
+
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+let month = months[currentTime.getMonth()];
+let dayNumber = currentTime.getDate();
+document.querySelector("#day").innerHTML = `${day}, ${month} ${dayNumber}`;
+
+let searchCity = document.querySelector("#search-field");
+searchCity.addEventListener("submit", citySearch);
+
+let useCurrent = document.querySelector("#current-location-button");
+useCurrent.addEventListener("click", clickUseCurrent);
+
 let celsiusTemp = null;
 
 let fahrenheit = document.querySelector("#f-temp");
@@ -129,4 +156,6 @@ fahrenheit.addEventListener("click", showFahrenheitTemp);
 
 let celsius = document.querySelector("#c-temp");
 celsius.addEventListener("click", showCelsiusTemp);
+
 citySubmit("Kyiv");
+displayForecast();
