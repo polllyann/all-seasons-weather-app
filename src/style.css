@@ -9,7 +9,7 @@ a {
 
 h1 {
   font-size: 25px;
-  margin: 15px 0 0 0;
+  margin: 5px 0 0 0;
 }
 
 h2 {
@@ -55,10 +55,6 @@ a:hover {
   margin: 0 auto;
 }
 
-.right-side {
-  margin-top: 33px;
-}
-
 .fahrenheit.active {
   text-decoration: none;
   cursor: default;
@@ -79,7 +75,9 @@ a:hover {
 }
 .current-location {
   font-size: 10px;
-  margin-left: 140px;
+  display: block;
+  margin: 5px 0 20px 0;
+  text-align: left;
 }
 
 .current-location:hover {
@@ -120,10 +118,6 @@ a:hover {
   margin: 40px 0 0 0;
 }
 
-.weather-image-big {
-  margin: -15px 0 0 0;
-}
-
 .top-weather-icon {
   margin: 0 auto;
   height: 40px;
@@ -147,8 +141,9 @@ a:hover {
 .weather-forecast {
   text-align: center;
   color: #48484a;
-  margin: -20px 0 0 0;
   font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  margin-top: 15px;
 }
 
 .weather-forecast-date {
